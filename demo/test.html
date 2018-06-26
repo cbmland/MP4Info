@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="context-Type" content="text/html;charset=GBK">
+    </head>
+    <body>
+        <input type="file" accept="video/*" id="files">
+        <div><h3 id="output"></h3></div>
+        <script src="js/mmd.local.min.js"></script>
+        <script>
+            files.addEventListener("change",function(e){
+               
+              
+                var f = new FileReader();
+                f.onload =function()
+                {
+                    
+                    var info = MMD.mp4.getMediaInfo(f.result)
+                    output.innerHTML =
+                     JSON.stringify(info)
+                }
+                f.readAsArrayBuffer(e.target.files[0])
+            })
+    
+        </script>
+    </body>
+</html>
