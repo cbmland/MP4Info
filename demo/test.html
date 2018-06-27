@@ -6,7 +6,7 @@
     <body>
         <input type="file" accept="video/*" id="files">
         <div><h3 id="output"></h3></div>
-        <script src="js/mmd.local.min.js"></script>
+        <script src="js/mp4.info.min.js"></script>
         <script>
             files.addEventListener("change",function(e){
                
@@ -15,7 +15,7 @@
                 f.onload =function()
                 {
                     
-                    var info = MMD.mp4.getMediaInfo(f.result)
+                    var info = MP4.getMediaInfo(f.result)
                     output.innerHTML =
                      JSON.stringify(info)
                 }

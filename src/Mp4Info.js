@@ -109,7 +109,7 @@ const getBoxs = (box) =>{
          */
         offset = _box.headerLength; 
         boxs =[]
-        while(true)
+        while(offset < _box.size)
         {
             /**
              * 取出box列表。
@@ -125,12 +125,7 @@ const getBoxs = (box) =>{
             */
            offset += subBox.size; 
            boxs.push(subBox)  
-        /**
-         * 
-         * offset等于box的长度，退出循环
-         */
-        if (offset == _box.size) 
-            break;
+        
             
         }  
    
@@ -222,7 +217,7 @@ const getMediaInfo =(buffer)=>{
                 
                 result = {rotation,width,height,fps:_timescale/sttsSample[0].duration,duration} ; 
 
-                
+
             }      
         }
     })
